@@ -1,0 +1,31 @@
+github usernames: zach7creech
+				  ncreech1
+
+github repository: https://github.com/ncreech1/CS302-Projects.git
+
+Contribution:
+
+In dijkstra.cpp, I wrote the code that reads in all of the information from standard input,
+builds the grid of Node *'s, and creates the adjacency list for each Node. I did not write
+the code that implements Dijkstra's algorithm, but I helped my partner work through the
+implementation and fix bugs. I also wrote generate_map.cpp.
+
+Questions:
+
+1. We treated each tile in the map as a vertex in a graph. Each node has up to four neighbors 
+(up down left right) that are each connected to the central node by an "edge", represented by
+an adjacency list that is maintained locally in each Node structure. Each node also has a 
+weight associated with it based on what terrain type it is - since leaving a node is what 
+counts as adding to the weight of the path, the weight of each edge is the weight associated 
+with the origin node.
+
+2. Assuming that we correctly followed the implementation of Dijkstra's algorithm detailed
+in Dr. Plank's notes, the time complexity is roughly O(N + Elog(N)), where N is the
+number of nodes and E is the number of edges. As Dr. Plank stated, this is because the
+algorithm visits every node and every edge once, and a node is inserted into the multimap
+at potentially every edge visited.
+
+3. Our implementation scales relatively well, and appears to be around the proposed time
+complexity. For example, doubling n from 10 to 20 (100 nodes to 400 nodes) took about 4
+times the memory. At smaller N, the program behaves almost linearly, but at larger N one
+can see that the ElogN addition has a stronger effect.
